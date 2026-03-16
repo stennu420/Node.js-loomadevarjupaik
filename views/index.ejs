@@ -1,0 +1,30 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<main class="container my-5">
+  <div class="text-center mb-5">
+    <h1 class="display-4">Avaleht</h1>
+    <p class="lead">Tere tulemast loomade varjupaiga veebilehele!</p>
+    <p>Siin näed viimati lisatud loomi, kes otsivad hoolivat kodu.</p>
+  </div>
+
+  <h2 class="mb-4">Viimased 4 lisatud looma</h2>
+
+  <div class="row">
+    <% animals.forEach(animal => { %>
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="<%= animal.image %>" class="card-img-top" alt="<%= animal.name %>">
+          <div class="card-body">
+            <h5 class="card-title"><%= animal.name %></h5>
+            <p class="card-text"><strong>Liik:</strong> <%= animal.species %></p>
+            <p class="card-text"><strong>Vanus:</strong> <%= animal.age %></p>
+            <p class="card-text"><strong>Staatus:</strong> <%= animal.status %></p>
+          </div>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</main>
+
+<%- include('partials/footer') %>
